@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { availableArticles } from "../../api";
 import ArticleCard from "../ArticleCard/ArticleCard";
 
-
-const Articles = () => {
+const Home = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -14,6 +13,7 @@ const Articles = () => {
 
   return (
     <div>
+
       <ul>
         {articles.map((article, i) => {
           return <ArticleCard article={article} key={i} />;
@@ -23,4 +23,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default Home;

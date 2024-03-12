@@ -8,4 +8,8 @@ const availableArticles = () => {
   return ncNewsAPI.get("articles").then((response) => response.data.articles);
 };
 
-export { availableArticles };
+const getSingleArticle = (article_id) => {
+  return ncNewsAPI.get(`articles/${article_id}`).then((response) => response.data.article);
+};
+
+export { availableArticles, getSingleArticle };
