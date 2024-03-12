@@ -9,7 +9,15 @@ const availableArticles = () => {
 };
 
 const getSingleArticle = (article_id) => {
-  return ncNewsAPI.get(`articles/${article_id}`).then((response) => response.data.article);
+  return ncNewsAPI
+    .get(`articles/${article_id}`)
+    .then((response) => response.data.article);
 };
 
-export { availableArticles, getSingleArticle };
+const getArticleComments = (article_id) => {
+  return ncNewsAPI
+    .get(`articles/${article_id}/comments`)
+    .then((response) => response.data.comments);
+};
+
+export { availableArticles, getSingleArticle, getArticleComments };
