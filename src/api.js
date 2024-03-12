@@ -20,4 +20,18 @@ const getArticleComments = (article_id) => {
     .then((response) => response.data.comments);
 };
 
-export { availableArticles, getSingleArticle, getArticleComments };
+const upVoteArticle = (article_id, vote) => {
+  return ncNewsAPI
+    .patch(`articles/${article_id}`, vote)
+    .then((response) => response.data.article)
+    .catch((error) => {
+      console.dir(error);
+    });
+};
+
+export {
+  availableArticles,
+  getSingleArticle,
+  getArticleComments,
+  upVoteArticle,
+};
