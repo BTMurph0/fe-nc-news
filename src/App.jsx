@@ -15,10 +15,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/articles/" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route
-          path="/articles/:article_id/comments"
-          element={<CommentList />}
-        />
       </Routes>
     </div>
   );

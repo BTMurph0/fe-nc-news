@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getSingleArticle } from "../../api";
-import { Link } from "react-router-dom";
-import CommentCard from "../CommentCard/CommentCard";
+import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
+  const [votes, setVotes] = useState([])
   const { article_id } = useParams();
 
   useEffect(() => {
     getSingleArticle(article_id).then((articleData) => {
       setArticle(articleData);
+      setVotes(articleData.votes)
     });
   }, [article_id]);
+
+  const upVote = (event) => {
+    event.preventDefault();
+    const voteObj = {
+      inc_votes: 1,
+    };
+    setVotes((currVotes) => currVotes + 1)
+    upVoteArticle(article_id, voteObj).then((response) => {
+      return response;
+    });
+  };
 
   return (
     <div>
@@ -23,10 +34,14 @@ const SingleArticle = () => {
       <p>Created: {article.created_at}</p>
       <img src={article.article_img_url} />
       <p>{article.body}</p>
-      <p>Votes: {article.votes}</p>
-      <Link to={`/articles/${article_id}/comments`}>Comments: {article.comment_count}
-      </Link>
-      <CommentList/>
+      <p>
+        Votes: {votes}
+        <button onClick={upVote}>Vote</button>
+      </p>
+
+      <p>Comments: {article.comment_count}</p>
+
+      <CommentList />
     </div>
   );
 };
