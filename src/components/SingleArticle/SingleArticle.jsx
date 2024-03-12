@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle } from "../../api";
+import { Link } from "react-router-dom";
+import CommentCard from "../CommentCard/CommentCard";
+import CommentList from "../CommentList/CommentList";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -21,9 +24,9 @@ const SingleArticle = () => {
       <img src={article.article_img_url} />
       <p>{article.body}</p>
       <p>Votes: {article.votes}</p>
-      <p>Comments: {article.comment_count}</p>
-
-      <p></p>
+      <Link to={`/articles/${article_id}/comments`}>Comments: {article.comment_count}
+      </Link>
+      <CommentList/>
     </div>
   );
 };
