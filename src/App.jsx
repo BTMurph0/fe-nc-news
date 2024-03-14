@@ -3,7 +3,6 @@ import Articles from "./components/Articles/Articles";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import SingleArticle from "./components/SingleArticle/SingleArticle";
-import CommentList from "./components/CommentList/CommentList";
 
 import Home from "./components/Home/Home";
 

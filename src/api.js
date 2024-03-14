@@ -29,9 +29,19 @@ const upVoteArticle = (article_id, vote) => {
     });
 };
 
+const postComment = (article_id, comment) => {
+  return ncNewsAPI
+    .post(`articles/${article_id}/comments`, comment)
+    .then((response) => response.data.comment)
+    .catch((error) => {
+      console.dir(error);
+    });
+};
+
 export {
   availableArticles,
   getSingleArticle,
   getArticleComments,
   upVoteArticle,
+  postComment,
 };

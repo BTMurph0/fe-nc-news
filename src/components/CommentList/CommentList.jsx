@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getArticleComments } from "../../api";
 import CommentCard from "../CommentCard/CommentCard";
+import CommentAdder from "../CommentAdder/CommentAdder";
+
 import { useParams } from "react-router-dom";
 
 const CommentList = () => {
@@ -16,6 +18,7 @@ const CommentList = () => {
 
   return (
     <div>
+      <CommentAdder setComments={setComments}/>
       <ul>
         {comments.map((comment, i) => {
           return <CommentCard comment={comment} key={i} />;
