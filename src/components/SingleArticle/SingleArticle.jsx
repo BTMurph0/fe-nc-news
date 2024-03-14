@@ -3,15 +3,16 @@ import { useParams } from "react-router-dom";
 import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
 
+
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
-  const [votes, setVotes] = useState([])
+  const [votes, setVotes] = useState(0);
   const { article_id } = useParams();
 
   useEffect(() => {
     getSingleArticle(article_id).then((articleData) => {
       setArticle(articleData);
-      setVotes(articleData.votes)
+      setVotes(articleData.votes);
     });
   }, [article_id]);
 
@@ -20,7 +21,7 @@ const SingleArticle = () => {
     const voteObj = {
       inc_votes: 1,
     };
-    setVotes((currVotes) => currVotes + 1)
+    setVotes((currVotes) => currVotes + 1);
     upVoteArticle(article_id, voteObj).then((response) => {
       return response;
     });
@@ -40,7 +41,7 @@ const SingleArticle = () => {
       </p>
 
       <p>Comments: {article.comment_count}</p>
-
+      
       <CommentList />
     </div>
   );
