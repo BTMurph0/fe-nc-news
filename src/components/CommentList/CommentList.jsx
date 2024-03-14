@@ -21,7 +21,7 @@ const CommentList = () => {
       <CommentAdder setComments={setComments}/>
       <ul>
         {comments.map((comment, i) => {
-          return <CommentCard comment={comment} key={i} />;
+          return <CommentCard comment={comment} key={i} setComments={setComments}/>;
         })}
       </ul>
     </div>

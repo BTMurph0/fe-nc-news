@@ -16,6 +16,7 @@ const CommentAdder = ({setComments}) => {
     };
     postComment(article_id, newCommentObj).then((response) => {
       setComments((currComments) => [response, ...currComments])
+      
     });
   };
 

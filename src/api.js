@@ -38,10 +38,27 @@ const postComment = (article_id, comment) => {
     });
 };
 
+const deleteComment = (comment_id) => {
+  return ncNewsAPI
+    .delete(`/comments/${comment_id}`)
+    .then((response) => {
+      response.status;
+    })
+    .catch((error) => {
+      console.dir(error);
+    });
+};
+
+const getUsers = () => {
+  return ncNewsAPI.get("users").then((response) => response.data.users);
+};
+
 export {
   availableArticles,
   getSingleArticle,
   getArticleComments,
   upVoteArticle,
   postComment,
+  deleteComment,
+  getUsers,
 };
