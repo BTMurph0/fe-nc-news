@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { availableArticles } from "../../api";
 import ArticleCard from "../ArticleCard/ArticleCard";
-
+import TopicFilter from "../Topics/TopicFilter";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -14,6 +14,7 @@ const Articles = () => {
 
   return (
     <div>
+      <TopicFilter />
       <ul>
         {articles.map((article, i) => {
           return <ArticleCard article={article} key={i} />;
