@@ -1,6 +1,6 @@
 function TopicFilter({topic, setTopic}) {
   return (
-    <header>
+    
 
 
       <label htmlFor="topics">
@@ -13,7 +13,7 @@ function TopicFilter({topic, setTopic}) {
             <option value="football">Football</option>
           </select>
         </label>
-    </header>
+    
 
     
   );
