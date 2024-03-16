@@ -9,7 +9,7 @@ const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [topic, setTopic] = useState("")
   const [sort, setSort] = useState("created_at")
-  const [order, setOrder] = useState("asc")
+  const [order, setOrder] = useState("desc")
 
   useEffect(() => {
     availableArticles(topic, sort, order).then((articlesFromApi) => {
