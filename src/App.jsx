@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import SingleArticle from "./components/SingleArticle/SingleArticle";
 import Users from "./components/Users/Users";
-import Home from "./components/Home/Home";
 import { LoginContext } from "./contexts/LoginContext";
 import { useState } from "react";
 
@@ -21,7 +20,7 @@ const [login, setLogin] = useState({
       <LoginContext.Provider value={{login, setLogin}}>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Articles />}  />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<Users />} />
