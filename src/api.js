@@ -4,8 +4,14 @@ const ncNewsAPI = axios.create({
   baseURL: "https://barry-nc-news.onrender.com/api/",
 });
 
-const availableArticles = (topic) => {
-  return ncNewsAPI.get("articles", {params: {topic}}).then((response) => response.data.articles);
+const availableArticles = (topic, sort_by, order) => {
+{
+    return ncNewsAPI
+      .get("articles", { params: { topic, sort_by, order } })
+      .then((response) => {
+        return response.data.articles;
+      });
+  } 
 };
 
 const getSingleArticle = (article_id) => {
@@ -52,8 +58,6 @@ const deleteComment = (comment_id) => {
 const getUsers = () => {
   return ncNewsAPI.get("users").then((response) => response.data.users);
 };
-
-
 
 export {
   availableArticles,

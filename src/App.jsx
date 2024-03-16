@@ -7,10 +7,6 @@ import Users from "./components/Users/Users";
 import Home from "./components/Home/Home";
 import { LoginContext } from "./contexts/LoginContext";
 import { useState } from "react";
-import Coding from "./components/Topics/Coding";
-import Cooking from "./components/Topics/Cooking";
-import Football from "./components/Topics/Football";
-
 
 function App() {
 
@@ -28,9 +24,6 @@ const [login, setLogin] = useState({
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route path="/articles/topics/coding" element={<Coding />} />
-        <Route path="/articles/topics/cooking" element={<Cooking />} />
-        <Route path="/articles/topics/football" element={<Football />} />
         <Route path="/users" element={<Users />} />
       </Routes>
       </LoginContext.Provider>

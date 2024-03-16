@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header>
-      <img src={login.avatar_url} alt="" />
+      <img className="loggedInUser" src={login.avatar_url} alt="" />
       <p>{login.username} is logged in</p>
       <h1>
         <Link to="/">NC News</Link>
