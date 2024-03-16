@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
-
+import ErrorArticle from "../ErrorPages/ErrorArticle";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [votes, setVotes] = useState(0);
+  const [error, setError] = useState(null);
   const { article_id } = useParams();
 
   useEffect(() => {
-    getSingleArticle(article_id).then((articleData) => {
-      setArticle(articleData);
-      setVotes(articleData.votes);
-    });
+    getSingleArticle(article_id)
+      .then((articleData) => {
+        setVotes(articleData.votes);
+        setArticle(articleData);
+      })
+      .catch((err) => {
+        console.log(err)
+        setError({err});
+      });
   }, [article_id]);
 
   const upVote = (event) => {
@@ -26,6 +32,11 @@ const SingleArticle = () => {
       return response;
     });
   };
+
+  if (error) {
+    console.log(error)
+    return <ErrorArticle error={error} />;
+  }
 
   return (
     <div>
@@ -41,7 +52,7 @@ const SingleArticle = () => {
       </p>
 
       <p>Comments: {article.comment_count}</p>
-      
+
       <CommentList />
     </div>
   );
