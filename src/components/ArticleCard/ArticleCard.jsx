@@ -10,6 +10,7 @@ const ArticleCard = ({ article }) => {
       <p>{article.author}</p>
       <p>{article.created_at}</p>
       <img src={article.article_img_url} alt="" />
+      <p>Votes: {article.votes}</p>
       <p>Comments: {article.comment_count}</p>
     </div>
   );
