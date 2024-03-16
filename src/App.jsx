@@ -6,6 +6,7 @@ import SingleArticle from "./components/SingleArticle/SingleArticle";
 import Users from "./components/Users/Users";
 import { LoginContext } from "./contexts/LoginContext";
 import { useState } from "react";
+import ErrorPageUrl from "./components/ErrorPages/ErrorPageUrl";
 
 function App() {
 
@@ -24,6 +25,7 @@ const [login, setLogin] = useState({
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<Users />} />
+        <Route path="*" element={<ErrorPageUrl/>}  />
       </Routes>
       </LoginContext.Provider>
     </div>

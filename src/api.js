@@ -5,19 +5,20 @@ const ncNewsAPI = axios.create({
 });
 
 const availableArticles = (topic, sort_by, order) => {
-{
+  {
     return ncNewsAPI
       .get("articles", { params: { topic, sort_by, order } })
       .then((response) => {
         return response.data.articles;
       });
-  } 
+  }
 };
 
 const getSingleArticle = (article_id) => {
   return ncNewsAPI
     .get(`articles/${article_id}`)
-    .then((response) => response.data.article);
+    .then((response) => response.data.article)
+    .catch((error) => error.response.data);
 };
 
 const getArticleComments = (article_id) => {
