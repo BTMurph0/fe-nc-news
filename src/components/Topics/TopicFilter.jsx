@@ -1,10 +1,3 @@
-
-
-function TopicFilter({ topic, setTopic }) {
-  return (
-    <div className="topicFilter">
-
-
 function TopicFilter({ topic, setTopic }) {
   return (
     <div className="topicMenu" >
