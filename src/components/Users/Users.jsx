@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getUsers } from "../../api";
 import UserCard from "../UserCard/UserCard";
 import Loading from "../Loading/Loading";
+import "./Users.css";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -17,7 +18,7 @@ const Users = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div>
+    <div className="usersList">
       <ul>
         {users.map((user, i) => {
           return <UserCard user={user} key={i} />;

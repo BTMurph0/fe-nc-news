@@ -4,6 +4,7 @@ import ArticleCard from "../ArticleCard/ArticleCard";
 import TopicFilter from "../Topics/TopicFilter";
 import Sort from "../Sorting/Sorting";
 import Loading from "../Loading/Loading";
+import "./Articles.css";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -22,14 +23,20 @@ const Articles = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div>
+    <div className="articles">
+      <div>
       <TopicFilter topic={topic} setTopic={setTopic} />
+      </div>
+      <div>
       <Sort sort={sort} order={order} setSort={setSort} setOrder={setOrder} />
+      </div>
+      <div className="articlesList">
       <ul>
         {articles.map((article, i) => {
           return <ArticleCard article={article} key={i} />;
         })}
       </ul>
+      </div>
     </div>
   );
 };
