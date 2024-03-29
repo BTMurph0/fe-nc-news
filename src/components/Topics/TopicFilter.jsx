@@ -1,8 +1,13 @@
-import "./TopicFilter.css"
+
 
 function TopicFilter({ topic, setTopic }) {
   return (
     <div className="topicFilter">
+
+
+function TopicFilter({ topic, setTopic }) {
+  return (
+    <div className="topicMenu" >
       <label htmlFor="topics">
         Select a topic:
         <select
