@@ -1,4 +1,5 @@
 import { deleteComment } from "../../api";
+import "./CommentDelete.css"
 
 const CommentDelete = ({ comment, setComments }) => {
 
@@ -14,7 +15,7 @@ const CommentDelete = ({ comment, setComments }) => {
 
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="deleteComment" onSubmit={handleSubmit}>
       <button>Delete</button>
     </form>
   );

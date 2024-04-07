@@ -1,4 +1,21 @@
 .commentCard {
     background-color: blanchedalmond;
     width: 500px;
+    border-radius: 10px;
+}
+
+#commentBody {
+    padding: 10px;
+}
+
+#commentAuthor {
+    padding: 10px;
+}
+
+#commentCreated {
+    padding: 10px;
+}
+
+#commentVotes {
+    padding: 10px;
 }

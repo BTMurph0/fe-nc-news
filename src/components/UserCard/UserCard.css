@@ -1,7 +1,8 @@
 .userCard {
   text-align: center;
-    background-color: aliceblue;
+    background-color: #F89880;
     width: 500px;
+    border-radius: 20px;
   }
   
   img {

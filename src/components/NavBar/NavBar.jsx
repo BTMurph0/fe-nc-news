@@ -5,8 +5,9 @@ import "./NavBar.css";
 function NavBar() {
   return (
     <nav id="nav">
-      <Link to="/articles">Articles</Link>
-      <Link to="/users">Users</Link>
+      <div><Link className="link" to="/articles">Articles</Link></div>
+      <div><Link className="link" to="/users">Users</Link></div>
+      
     </nav>
   );
 }

@@ -12,12 +12,13 @@ const CommentCard = ({ comment, setComments }) => {
   const {login} = useContext(LoginContext)
   return (
     <div className="commentCard">
-      <p>Comment: {comment.body}</p>
-      <p>Author: {comment.author}</p>
-      <p>Created: {comment.created_at}</p>
-      <p>Votes: {comment.votes}</p>
-      {login.username === comment.author ? (<CommentDelete comment={comment} setComments={setComments} />) : <p></p> }
       
+      <p id="commentBody">Comment: {comment.body}</p>
+      <p id="commentAuthor">Author: {comment.author}</p>
+      <p id="commentCreated" >Created: {comment.created_at}</p>
+      <p id="commentVotes" >Votes: {comment.votes}</p>
+      {login.username === comment.author ? (<CommentDelete comment={comment} setComments={setComments} />) : <p></p> }
+
     </div>
   );
 };

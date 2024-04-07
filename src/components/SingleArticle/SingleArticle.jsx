@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
 import ErrorArticle from "../ErrorPages/ErrorArticle";
+import "./SingleArticle.css"
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -39,7 +40,7 @@ const SingleArticle = () => {
   }
 
   return (
-    <div>
+    <div className="articlePage">
       <h2>{article.title}</h2>
       <p>Topic: {article.topic}</p>
       <p>Author: {article.author}</p>
