@@ -1,11 +1,19 @@
 header {
-  padding: 20px;
+  box-sizing: border-box;
   text-align: center;
   background: navy;
   color: white  ;
+  padding: 1em;
+  align-items: baseline;
+  margin-bottom: 2em;
+}
+
+h1 {
+  font-size: xxx-large;
 }
 
 .loggedInUser {
+  padding-top: 20px;
   height: 100px;
   width: 100px;
   border-radius: 10px;
