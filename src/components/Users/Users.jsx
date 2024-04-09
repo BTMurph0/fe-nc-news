@@ -18,6 +18,9 @@ const Users = () => {
   if (isLoading) return <Loading />;
 
   return (
+    <div>
+      <h2>Welcome to NC News</h2>
+      <p>Select a user to login.</p>
     <div className="usersList">
       {users.map((user, i) => {
         return (
@@ -26,6 +29,7 @@ const Users = () => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };

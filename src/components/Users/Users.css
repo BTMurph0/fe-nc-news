@@ -1,3 +1,11 @@
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
 .usersList {
   display: flex;
   flex-direction: row;
