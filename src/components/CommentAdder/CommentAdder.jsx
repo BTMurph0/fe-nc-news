@@ -3,8 +3,7 @@ import { useState } from "react";
 import { postComment } from "../../api";
 import { useParams } from "react-router-dom";
 
-
-const CommentAdder = ({setComments}) => {
+const CommentAdder = ({ setComments }) => {
   const [commentText, setCommentText] = useState("");
   const { article_id } = useParams();
 
@@ -15,8 +14,8 @@ const CommentAdder = ({setComments}) => {
       author: "grumpy19",
     };
     postComment(article_id, newCommentObj).then((response) => {
-      setComments((currComments) => [response, ...currComments])
-      
+      setComments((currComments) => [response, ...currComments]);
+      setCommentText("");
     });
   };
 

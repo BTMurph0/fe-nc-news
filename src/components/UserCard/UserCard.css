@@ -1,11 +1,20 @@
 .userCard {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 160px;
+  gap: 4px;
   text-align: center;
-    background-color: #F89880;
-    width: 500px;
-    border-radius: 20px;
-  }
-  
-  img {
-    width: 250px;
-    height: 300px;
-  }
+  align-items: center;
+  border: 2px;
+  border-radius: 12px;
+  background-color: lightgrey;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+}
