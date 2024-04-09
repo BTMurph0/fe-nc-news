@@ -19,11 +19,13 @@ const Users = () => {
 
   return (
     <div className="usersList">
-      <ul>
-        {users.map((user, i) => {
-          return <UserCard user={user} key={i} />;
-        })}
-      </ul>
+      {users.map((user, i) => {
+        return (
+          <div>
+            <UserCard user={user} key={i} />
+          </div>
+        );
+      })}
     </div>
   );
 };
