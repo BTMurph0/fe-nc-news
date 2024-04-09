@@ -20,7 +20,7 @@ const [login, setLogin] = useState({
       <LoginContext.Provider value={{login, setLogin}}>
       <Header />
       <Routes>
-        <Route path="/" element={<Articles />}  />
+        <Route path="/" element={<Users />}  />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<Users />} />
