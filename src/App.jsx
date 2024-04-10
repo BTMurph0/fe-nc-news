@@ -8,24 +8,23 @@ import { useState } from "react";
 import ErrorPageUrl from "./components/ErrorPages/ErrorPageUrl";
 
 function App() {
-
-const [login, setLogin] = useState({
-  username: "guest",
-  avatar_url: "./3da39-no-user-image-icon-27.webp"
-})
-
+  const [login, setLogin] = useState({
+    username: "guest",
+    avatar_url:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7qW3eIHe8KgusWlt1zF8ceRZUyfph3LYTssjVgXF9bg&s",
+  });
 
   return (
     <div className="App">
-      <LoginContext.Provider value={{login, setLogin}}>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Users />}  />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="*" element={<ErrorPageUrl/>}  />
-      </Routes>
+      <LoginContext.Provider value={{ login, setLogin }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Users />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:article_id" element={<SingleArticle />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="*" element={<ErrorPageUrl />} />
+        </Routes>
       </LoginContext.Provider>
     </div>
   );
