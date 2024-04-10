@@ -19,8 +19,8 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Welcome to NC News</h2>
-      <p>Select a user to login.</p>
+      <h2 id="welcomeHeader">Welcome to NC News</h2>
+      <p id="selectUser">Select a user to login.</p>
     <div className="usersList">
       {users.map((user, i) => {
         return (

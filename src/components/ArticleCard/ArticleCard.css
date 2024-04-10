@@ -1,4 +1,4 @@
-.articleCard {
+#articleCard {
   background-color: aliceblue;
   width: 500px;
   text-align: left;
@@ -7,7 +7,7 @@
   text-decoration: none;
   }
 
-.articleImage {
+#articleImage {
   max-height: 200px;
   max-width: 250px;
 }
