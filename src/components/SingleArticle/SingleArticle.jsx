@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
 import ErrorArticle from "../ErrorPages/ErrorArticle";
-import "./SingleArticle.css"
+import { LoginContext } from "../../contexts/LoginContext";
+import "./SingleArticle.css";
 
 const SingleArticle = () => {
+  const { login } = useContext(LoginContext);
   const [article, setArticle] = useState({});
   const [votes, setVotes] = useState(0);
   const [error, setError] = useState(null);
@@ -18,8 +20,8 @@ const SingleArticle = () => {
         setArticle(articleData);
       })
       .catch((err) => {
-        console.log(err)
-        setError({err});
+        console.log(err);
+        setError({ err });
       });
   }, [article_id]);
 
@@ -35,7 +37,7 @@ const SingleArticle = () => {
   };
 
   if (error) {
-    console.log(error)
+    console.log(error);
     return <ErrorArticle error={error} />;
   }
 
@@ -49,7 +51,7 @@ const SingleArticle = () => {
       <p>{article.body}</p>
       <p>
         Votes: {votes}
-        <button onClick={upVote}>Vote</button>
+        {login.username != "guest" && <button onClick={upVote}>Vote</button>}
       </p>
 
       <p>Comments: {article.comment_count}</p>
