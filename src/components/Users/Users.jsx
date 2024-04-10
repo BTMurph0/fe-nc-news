@@ -20,11 +20,11 @@ const Users = () => {
   return (
     <div>
       <h2 id="welcomeHeader">Welcome to NC News</h2>
-      <p id="selectUser">Select a user to login.</p>
+      <p id="selectUser">Select a user to login in order to vote and comment on articles.</p>
     <div className="usersList">
       {users.map((user, i) => {
         return (
-          <div>
+          <div user={user} key={i}>
             <UserCard user={user} key={i} />
           </div>
         );
