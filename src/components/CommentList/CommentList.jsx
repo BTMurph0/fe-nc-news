@@ -6,7 +6,7 @@ import { LoginContext } from "../../contexts/LoginContext";
 
 import { useParams } from "react-router-dom";
 
-const CommentList = () => {
+const CommentList = ({setCommentCount}) => {
   const [comments, setComments] = useState([]);
   const { article_id } = useParams();
   const { login } = useContext(LoginContext);
@@ -19,7 +19,7 @@ const CommentList = () => {
 
   return (
     <div>
-      {login.username != "guest" && <CommentAdder setComments={setComments} />}
+      {login.username != "guest" && <CommentAdder setComments={setComments} setCommentCount={setCommentCount}/>}
       <ul>
         {comments.map((comment, i) => {
           return (

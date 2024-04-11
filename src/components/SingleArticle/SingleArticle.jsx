@@ -10,6 +10,7 @@ const SingleArticle = () => {
   const { login } = useContext(LoginContext);
   const [article, setArticle] = useState({});
   const [votes, setVotes] = useState(0);
+  const [commentCount, setCommentCount] = useState(0)
   const [error, setError] = useState(null);
   const { article_id } = useParams();
 
@@ -17,6 +18,7 @@ const SingleArticle = () => {
     getSingleArticle(article_id)
       .then((articleData) => {
         setVotes(articleData.votes);
+        setCommentCount(articleData.comment_count);
         setArticle(articleData);
       })
       .catch((err) => {
@@ -54,9 +56,9 @@ const SingleArticle = () => {
         {login.username != "guest" && <button onClick={upVote}>Vote</button>}
       </p>
 
-      <p>Comments: {article.comment_count}</p>
+      <p>Comments: {commentCount}</p>
 
-      <CommentList />
+      <CommentList setCommentCount={setCommentCount}/>
     </div>
   );
 };
