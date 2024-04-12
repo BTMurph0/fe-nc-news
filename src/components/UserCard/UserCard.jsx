@@ -11,7 +11,7 @@ const UserCard = ({ user }) => {
     }} className="userCard">
       <p>Username: {user.username}</p>
       <p>Name: {user.name}</p>
-      <img src={user.avatar_url} alt="" />
+      <img id="userImg" src={user.avatar_url} alt="" />
     </div>
   );
 };
