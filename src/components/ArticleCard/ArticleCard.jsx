@@ -16,7 +16,11 @@ const ArticleCard = ({ article }) => {
         <p>
           <strong>Author:</strong> {article.author}
         </p>
-        <img id="articleImage" src={article.article_img_url} alt="" />
+        <img
+          id="articleImage"
+          src={article.article_img_url}
+          alt={article.article_img_url}
+        />
         <p>
           <strong>Votes:</strong> {article.votes}
         </p>

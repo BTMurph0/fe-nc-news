@@ -10,7 +10,7 @@ const SingleArticle = () => {
   const { login } = useContext(LoginContext);
   const [article, setArticle] = useState({});
   const [votes, setVotes] = useState(0);
-  const [commentCount, setCommentCount] = useState(0)
+  const [commentCount, setCommentCount] = useState(0);
   const [error, setError] = useState(null);
   const { article_id } = useParams();
 
@@ -49,7 +49,7 @@ const SingleArticle = () => {
       <p>Topic: {article.topic}</p>
       <p>Author: {article.author}</p>
       <p>Created: {article.created_at}</p>
-      <img src={article.article_img_url} />
+      <img src={article.article_img_url} alt={article.article_img_url} />
       <p>{article.body}</p>
       <p>
         Votes: {votes}
@@ -58,7 +58,7 @@ const SingleArticle = () => {
 
       <p>Comments: {commentCount}</p>
 
-      <CommentList setCommentCount={setCommentCount}/>
+      <CommentList setCommentCount={setCommentCount} />
     </div>
   );
 };
