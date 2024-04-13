@@ -12,7 +12,7 @@ const Header = () => {
       <img className="loggedInUser" src={login.avatar_url} alt="" />
       <p>{login.username} is logged in</p>
       <h1>
-        <Link className="link" to="/">NC News</Link>
+        <Link className="headerLink" to="/">NC News</Link>
       </h1>
       <NavBar />
     </header>
