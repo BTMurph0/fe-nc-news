@@ -1,13 +1,59 @@
 #articleCard {
   background-color: aliceblue;
-  width: 500px;
+  max-width: 500px;
   text-align: left;
   padding-left: 20px;
-  border-radius: 20px;
-  text-decoration: none;
+  border-radius: 10px;
+  color: navy;
+  font-family: sans-serif;
+  font-size: 14px;
   }
+
+.articleLink {
+  text-decoration: none;
+}
+
+.articleTitle {
+  font-size: 20px;
+  font-family: Impact;
+  padding-top: 20px;
+  margin-bottom: auto;
+}
 
 #articleImage {
   max-height: 200px;
   max-width: 250px;
+}
+
+.authorTimeAgo p{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+.author {
+  text-align: left;
+  width: 49%;
+}
+
+.timeAgo {
+  text-align: right;
+}
+
+.votesComments p{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  padding-bottom: 20px;
+}
+
+.votes {
+  text-align: left;
+  width: 49%;
+}
+
+.comments {
+  text-align: right;
 }

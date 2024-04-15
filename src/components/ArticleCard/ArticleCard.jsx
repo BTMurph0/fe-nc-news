@@ -7,27 +7,28 @@ const ArticleCard = ({ article }) => {
     addSuffix: true,
   });
   return (
-    <Link to={`/articles/${article.article_id}`}>
+    <Link className="articleLink" to={`/articles/${article.article_id}`}>
       <article id="articleCard">
-        <h3>{article.title}</h3>
+        <h3 className="articleTitle">{article.title}</h3>
+        <article className="authorTimeAgo">
+        <p className="author"><strong>Author:</strong> {article.author}</p><p className="timeAgo">{timeAgo}</p>
+        </article>
         <p>
           <strong>Topic:</strong> {article.topic}
-        </p>
-        <p>
-          <strong>Author:</strong> {article.author}
         </p>
         <img
           id="articleImage"
           src={article.article_img_url}
           alt={article.article_img_url}
         />
-        <p>
+        <article className="votesComments">
+        <p className="votes">
           <strong>Votes:</strong> {article.votes}
         </p>
-        <p>
+        <p className="comments">
           <strong>Comments:</strong> {article.comment_count}
         </p>
-        <p>{timeAgo}</p>
+        </article>
       </article>
     </Link>
   );

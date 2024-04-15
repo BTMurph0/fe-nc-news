@@ -46,20 +46,19 @@ const SingleArticle = () => {
   return (
     <article className="articlePage">
       <header>
-        <h2>{article.title}</h2>
+      <p><strong>Topic:</strong> {article.topic}</p>
+        <h2 className="articlePageTitle">{article.title}</h2>
       </header>
-
-      <p>Topic: {article.topic}</p>
-      <p>Author: {article.author}</p>
-      <p>Created: {article.created_at}</p>
+      <p><strong>Author:</strong> {article.author}</p>
+      <p><strong>Created:</strong> {article.created_at}</p>
       <img src={article.article_img_url} alt={article.article_img_url} />
       <p>{article.body}</p>
       <p>
-        Votes: {votes}
+        <strong>Votes:</strong> {votes}
         {login.username != "guest" && <button onClick={upVote}>Vote</button>}
       </p>
 
-      <p>Comments: {commentCount}</p>
+      <p><strong>Comments:</strong> {commentCount}</p>
 
       <CommentList setCommentCount={setCommentCount} />
     </article>

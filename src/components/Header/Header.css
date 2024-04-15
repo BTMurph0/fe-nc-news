@@ -21,8 +21,8 @@
 
 .loggedInUser {
   background-color: white;
-  padding-top: 20px;
-  height: 100px;
-  width: 100px;
+  padding-top: 2px;
+  height: 50px;
+  width: 50px;
   border-radius: 10px;
 }
