@@ -51,7 +51,7 @@ const SingleArticle = () => {
       </header>
       <p><strong>Author:</strong> {article.author}</p>
       <p><strong>Created:</strong> {article.created_at}</p>
-      <img src={article.article_img_url} alt={article.article_img_url} />
+      <img className="articlePageImage" src={article.article_img_url} alt={article.article_img_url} />
       <p>{article.body}</p>
       <p>
         <strong>Votes:</strong> {votes}

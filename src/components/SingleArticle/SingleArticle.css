@@ -9,3 +9,8 @@
     font-size: 24px;
     margin-top: auto;
 }
+
+.articlePageImage {
+    max-width: 500px;
+    max-height: 400px;
+}
