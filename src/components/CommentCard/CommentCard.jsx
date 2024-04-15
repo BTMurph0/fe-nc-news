@@ -11,7 +11,7 @@ const CommentCard = ({ comment, setComments }) => {
 
   const {login} = useContext(LoginContext)
   return (
-    <div className="commentCard">
+    <article className="commentCard">
       
       <p id="commentBody">Comment: {comment.body}</p>
       <p id="commentAuthor">Author: {comment.author}</p>
@@ -19,7 +19,7 @@ const CommentCard = ({ comment, setComments }) => {
       <p id="commentVotes" >Votes: {comment.votes}</p>
       {login.username === comment.author ? (<CommentDelete comment={comment} setComments={setComments} />) : <p></p> }
 
-    </div>
+    </article>
   );
 };
 

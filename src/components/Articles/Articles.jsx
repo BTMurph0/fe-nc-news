@@ -23,7 +23,7 @@ const Articles = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="articles">
+    <article className="articles">
       <div>
       <TopicFilter topic={topic} setTopic={setTopic} />
       </div>
@@ -37,7 +37,7 @@ const Articles = () => {
         })}
       </ul>
       </div>
-    </div>
+    </article>
   );
 };
 

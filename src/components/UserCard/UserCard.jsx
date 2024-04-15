@@ -6,13 +6,13 @@ const UserCard = ({ user }) => {
   const { setLogin } = useContext(LoginContext);
 
   return (
-    <div onClick={() => {
+    <article onClick={() => {
       setLogin(user);
     }} className="userCard">
       <p>Username: {user.username}</p>
       <p>Name: {user.name}</p>
       <img id="userImg" src={user.avatar_url} alt={user.name}/>
-    </div>
+    </article>
   );
 };
 

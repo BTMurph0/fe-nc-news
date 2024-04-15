@@ -8,7 +8,7 @@ const ArticleCard = ({ article }) => {
   });
   return (
     <Link to={`/articles/${article.article_id}`}>
-      <div id="articleCard">
+      <article id="articleCard">
         <h3>{article.title}</h3>
         <p>
           <strong>Topic:</strong> {article.topic}
@@ -28,7 +28,7 @@ const ArticleCard = ({ article }) => {
           <strong>Comments:</strong> {article.comment_count}
         </p>
         <p>{timeAgo}</p>
-      </div>
+      </article>
     </Link>
   );
 };

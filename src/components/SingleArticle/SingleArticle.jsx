@@ -44,8 +44,11 @@ const SingleArticle = () => {
   }
 
   return (
-    <div className="articlePage">
-      <h2>{article.title}</h2>
+    <article className="articlePage">
+      <header>
+        <h2>{article.title}</h2>
+      </header>
+
       <p>Topic: {article.topic}</p>
       <p>Author: {article.author}</p>
       <p>Created: {article.created_at}</p>
@@ -59,7 +62,7 @@ const SingleArticle = () => {
       <p>Comments: {commentCount}</p>
 
       <CommentList setCommentCount={setCommentCount} />
-    </div>
+    </article>
   );
 };
 
