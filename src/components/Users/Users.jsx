@@ -21,8 +21,10 @@ const Users = () => {
 
   return (
     <section>
-      <h2 id="welcomeHeader">Welcome to NC News</h2>
-      <p id="selectUser">{login.username === "guest" ? "You are logged in as guest. Select a user to login in order to vote and comment on articles." : `You are logged in as ${login.username}.`}  </p>
+      <article className="userText">
+        <h2 id="welcomeHeader">Welcome to NC News!</h2>
+        <p id="selectUser">{login.username === "guest" ? "You are logged in as guest. Select a user to login in order to vote and comment on articles." : `You are logged in as ${login.username}.`}  </p>
+      </article>
     <article className="usersList">
       {users.map((user, i) => {
         return (

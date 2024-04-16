@@ -8,7 +8,7 @@ const Header = () => {
   const { login } = useContext(LoginContext);
 
   return (
-    <header id="mainHeader">
+    <header className="mainHeader">
       <img className="loggedInUser" src={login.avatar_url} alt="" />
       <p>{login.username} is logged in</p>
       <h1>

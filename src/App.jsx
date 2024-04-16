@@ -15,7 +15,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <main className="App">
       <LoginContext.Provider value={{ login, setLogin }}>
         <Header />
         <Routes>
@@ -26,7 +26,7 @@ function App() {
           <Route path="*" element={<ErrorPageUrl />} />
         </Routes>
       </LoginContext.Provider>
-    </div>
+    </main>
   );
 }
 

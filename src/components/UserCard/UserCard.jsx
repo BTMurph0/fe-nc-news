@@ -9,8 +9,8 @@ const UserCard = ({ user }) => {
     <article onClick={() => {
       setLogin(user);
     }} className="userCard">
-      <p>Username: {user.username}</p>
-      <p>Name: {user.name}</p>
+      <p><strong>Username:</strong> {user.username}</p>
+      <p><strong>Name:</strong> {user.name}</p>
       <img id="userImg" src={user.avatar_url} alt={user.name}/>
     </article>
   );

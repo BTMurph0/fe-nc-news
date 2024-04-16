@@ -1,15 +1,9 @@
-#mainHeader {
-  width: 90%;
-  box-sizing: border-box;
+.mainHeader {
   text-align: center;
-  background: navy;
+  background: #002D62;
   color: white;
   padding: 1em;
-  align-items: baseline;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
-  border-radius: 10px;
+  margin: 0;
 }
 
 .headerLink {
