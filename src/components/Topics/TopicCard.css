@@ -1,0 +1,18 @@
+.topicCard {
+  background-color: lightpink;
+  line-height: 3rem;
+  font-size: large;
+  border-radius: 10px;
+}
+
+.topicLink {
+  text-decoration: none;
+}
+
+.topicName {
+  color: black;
+  font-family: sans-serif;
+  padding: 0 10px 0 10px;
+}
+
+

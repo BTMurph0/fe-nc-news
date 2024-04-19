@@ -60,6 +60,10 @@ const getUsers = () => {
   return ncNewsAPI.get("users").then((response) => response.data.users);
 };
 
+const getTopics = () => {
+  return ncNewsAPI.get("topics").then((response) => response.data.topics);
+};
+
 export {
   availableArticles,
   getSingleArticle,
@@ -68,4 +72,5 @@ export {
   postComment,
   deleteComment,
   getUsers,
+  getTopics,
 };
