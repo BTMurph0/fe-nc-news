@@ -6,7 +6,6 @@ import Users from "./components/Users/Users";
 import { LoginContext } from "./contexts/LoginContext";
 import { useState } from "react";
 import ErrorPageUrl from "./components/ErrorPages/ErrorPageUrl";
-import TopicCard from "./components/Topics/TopicCard";
 
 function App() {
   const [login, setLogin] = useState({
@@ -23,7 +22,7 @@ function App() {
           <Route path="/" element={<Users />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:topic" element={<Articles />} />
-          <Route path="/articles/:article_id" element={<SingleArticle />} />
+          <Route path="/articles/:topic/:article_id" element={<SingleArticle />} />
           <Route path="/users" element={<Users />} />
           <Route path="*" element={<ErrorPageUrl />} />
         </Routes>
