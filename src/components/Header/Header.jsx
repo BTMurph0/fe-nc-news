@@ -8,14 +8,22 @@ const Header = () => {
   const { login } = useContext(LoginContext);
 
   return (
+    <>
     <header className="mainHeader">
-      <img className="loggedInUser" src={login.avatar_url} alt="" />
-      <p>{login.username} is logged in</p>
-      <h1>
-        <Link className="headerLink" to="/">NC News</Link>
-      </h1>
+      <div className="headerUser">
+        <div className="header">
+          <Link className="headerLink" to="/">
+            <h1 className="siteName">NC News</h1>
+          </Link>
+        </div>
+        <div className="user">
+          <img className="loggedInUser" src={login.avatar_url} alt="" />
+          <p>{login.username}</p>
+        </div>
+      </div>
       <NavBar />
     </header>
+    </>
   );
 };
 
