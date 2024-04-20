@@ -14,6 +14,10 @@ const SingleArticle = () => {
   const [error, setError] = useState(null);
   const { article_id } = useParams();
 
+  const date = new Date(article.created_at);
+  const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-UK', options);
+
   useEffect(() => {
     getSingleArticle(article_id)
       .then((articleData) => {
@@ -50,7 +54,7 @@ const SingleArticle = () => {
         <h2 className="articlePageTitle">{article.title}</h2>
       </header>
       <p><strong>Author:</strong> {article.author}</p>
-      <p><strong>Created:</strong> {article.created_at}</p>
+      <p><strong>Created:</strong> {formattedDate}</p>
       <img className="articlePageImage" src={article.article_img_url} alt={article.article_img_url} />
       <p>{article.body}</p>
       <p>
