@@ -13,7 +13,7 @@ const Header = () => {
       <div className="headerUser">
         <div className="header">
           <Link className="headerLink" to="/">
-            <h1 className="siteName">NC News</h1>
+            <h1 className="siteName">NC<br></br>News</h1>
           </Link>
         </div>
         <div className="user">
