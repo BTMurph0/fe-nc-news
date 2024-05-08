@@ -13,5 +13,6 @@
 .topics {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 16px;
 }
