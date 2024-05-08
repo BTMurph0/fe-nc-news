@@ -1,6 +1,7 @@
 #articleCard {
   background-color: aliceblue;
-  max-width: 500px;
+  max-width: 720px;
+  min-width: 300px;
   text-align: left;
   padding-left: 20px;
   border-radius: 10px;
@@ -19,7 +20,7 @@
 
 .articleTitle {
   color: navy;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-family: Impact;
   padding-top: 20px;
   margin-bottom: auto;
