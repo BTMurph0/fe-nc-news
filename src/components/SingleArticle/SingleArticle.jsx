@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleArticle, upVoteArticle } from "../../api";
 import CommentList from "../CommentList/CommentList";
@@ -13,6 +13,7 @@ const SingleArticle = () => {
   const [commentCount, setCommentCount] = useState(0);
   const [error, setError] = useState(null);
   const { article_id } = useParams();
+  const voteRef = useRef(null);
 
   const date = new Date(article.created_at);
   const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
@@ -32,7 +33,13 @@ const SingleArticle = () => {
   }, [article_id]);
 
   const upVote = (event) => {
+
     event.preventDefault();
+    if (voteRef.current && !voteRef.current.disabled) {
+      voteRef.current.disabled = true;
+      // Perform the action
+      // After the action is complete, reset buttonRef.current.disabled to false
+    }
     const voteObj = {
       inc_votes: 1,
     };
@@ -59,7 +66,7 @@ const SingleArticle = () => {
       <p>{article.body}</p>
       <p>
         <strong>Votes:</strong> {votes}
-        {login.username != "guest" && <button onClick={upVote}>Vote</button>}
+        {login.username != "guest" && <button onClick={upVote} ref={voteRef}>Vote</button>}
       </p>
 
       <p><strong>Comments:</strong> {commentCount}</p>
