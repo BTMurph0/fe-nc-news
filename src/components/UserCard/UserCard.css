@@ -7,12 +7,19 @@
   gap: 4px;
   text-align: center;
   align-items: center;
-  border: 2px;
-  border-radius: 12px;
   background-color: lightgrey;
   max-width: 500px;
+  min-width: 200px;
   border-radius: 20px;
   padding: 10px;
+}
+
+.userCard:hover {
+  filter: brightness(75%);
+}
+
+.userCard:active {
+  background-color: grey;
 }
 
 #userImg {

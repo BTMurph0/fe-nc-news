@@ -9,6 +9,10 @@
   font-size: 14px;
   }
 
+#articleCard:hover {
+  filter: brightness(75%);
+}
+
 .articleLink {
   text-decoration: none;
 }
