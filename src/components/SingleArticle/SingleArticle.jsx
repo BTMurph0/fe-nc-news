@@ -37,8 +37,6 @@ const SingleArticle = () => {
     event.preventDefault();
     if (voteRef.current && !voteRef.current.disabled) {
       voteRef.current.disabled = true;
-      // Perform the action
-      // After the action is complete, reset buttonRef.current.disabled to false
     }
     const voteObj = {
       inc_votes: 1,
