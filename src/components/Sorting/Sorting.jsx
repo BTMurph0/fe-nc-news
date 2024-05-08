@@ -1,8 +1,10 @@
+import "./Sorting.css"
+
 const Sort = ({ sort, order, setSort, setOrder }) => {
    
   
   return (
-    <div>
+    <div className="sortingOrdering">
     
         <label htmlFor="sorting">
           Sort by:
