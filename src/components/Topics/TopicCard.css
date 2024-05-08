@@ -5,6 +5,14 @@
   border-radius: 10px;
 }
 
+.topicCard:hover {
+  background-color: hotpink;
+}
+
+.topicCard:active {
+  background-color: blueviolet;
+}
+
 .topicLink {
   text-decoration: none;
 }
