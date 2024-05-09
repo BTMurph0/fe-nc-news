@@ -18,7 +18,7 @@ const CommentList = ({setCommentCount}) => {
   }, []);
 
   return (
-    <article>
+    <div>
       {login.username != "guest" && <CommentAdder setComments={setComments} setCommentCount={setCommentCount}/>}
       <ul>
         {comments.map((comment, i) => {
@@ -27,7 +27,7 @@ const CommentList = ({setCommentCount}) => {
           );
         })}
       </ul>
-    </article>
+    </div>
   );
 };
 
