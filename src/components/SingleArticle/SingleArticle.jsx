@@ -16,8 +16,13 @@ const SingleArticle = () => {
   const voteRef = useRef(null);
 
   const date = new Date(article.created_at);
-  const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
-  const formattedDate = date.toLocaleDateString('en-UK', options);
+  const options = {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  };
+  const formattedDate = date.toLocaleDateString("en-UK", options);
 
   useEffect(() => {
     getSingleArticle(article_id)
@@ -33,7 +38,6 @@ const SingleArticle = () => {
   }, [article_id]);
 
   const upVote = (event) => {
-
     event.preventDefault();
     if (voteRef.current && !voteRef.current.disabled) {
       voteRef.current.disabled = true;
@@ -55,21 +59,38 @@ const SingleArticle = () => {
   return (
     <article className="articlePage">
       <header>
-      <p><strong>Topic:</strong> {article.topic}</p>
+        <p>
+          <strong>Topic:</strong> {article.topic}
+        </p>
         <h2 className="articlePageTitle">{article.title}</h2>
       </header>
-      <p><strong>Author:</strong> {article.author}</p>
-      <p><strong>Created:</strong> {formattedDate}</p>
-      <img className="articlePageImage" src={article.article_img_url} alt={article.article_img_url} />
+      <p>
+        <strong>Author:</strong> {article.author}
+      </p>
+      <p>
+        <strong>Created:</strong> {formattedDate}
+      </p>
+      <img
+        className="articlePageImage"
+        src={article.article_img_url}
+        alt={article.article_img_url}
+      />
       <p>{article.body}</p>
       <p>
         <strong>Votes:</strong> {votes}
-        {login.username != "guest" && <button onClick={upVote} ref={voteRef}>Vote</button>}
+        {login.username != "guest" && (
+          <button onClick={upVote} ref={voteRef}>
+            Vote
+          </button>
+        )}
       </p>
 
-      <p><strong>Comments:</strong> {commentCount}</p>
-
-      <CommentList setCommentCount={setCommentCount} />
+      <p>
+        <strong>Comments:</strong> {commentCount}
+      </p>
+      <div className="commentList">
+        <CommentList setCommentCount={setCommentCount} />
+      </div>
     </article>
   );
 };

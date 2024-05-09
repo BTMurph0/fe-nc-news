@@ -1,6 +1,7 @@
 .commentCard {
     background-color: blanchedalmond;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     border-radius: 10px;
 }
 
