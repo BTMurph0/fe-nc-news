@@ -17,7 +17,12 @@ const Users = () => {
     });
   }, []);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <div className="loading">
+        <Loading />
+      </div>
+    );
 
   return (
     <section>
