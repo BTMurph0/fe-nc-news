@@ -5,13 +5,11 @@
 }
 
 .headerUser {
-  margin-top: -20px;
-  margin-bottom: -20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: auto;
+  max-width: 960px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 
@@ -19,7 +17,6 @@
 .headerLink {
   color: white;
   text-decoration: none;
-  
 }
 
 .loggedInUser {
