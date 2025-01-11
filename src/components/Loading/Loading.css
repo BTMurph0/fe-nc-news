@@ -1,15 +1,31 @@
+.usersLoading {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  gap: 16px;
+  justify-content: space-evenly;
+  margin: auto;
+  max-width: 1280px;
+}
+
+.articlesLoading {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
 .loader {
-    align-self: center;
-    margin: auto;
-    border: 16px solid #EAF0F6;
-    border-radius: 50%;
-    border-top: 16px solid #002D62;
-    width: 80px;
-    height: 80px;
-    animation: spinner 4s linear infinite;
-  }
-  @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
+  display: flex;
+  font-family: sans-serif;
+  flex-direction: column;
+  flex: 0 0 160px;
+  gap: 4px;
+  text-align: center;
+  align-items: center;
+  background-color: lightgrey;
+  height: 300px;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+}

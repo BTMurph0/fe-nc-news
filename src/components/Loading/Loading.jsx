@@ -1,11 +1,23 @@
 import "./Loading.css";
 
-const Loading = () => {
-  return (
-    <>
-      <div className="loader"></div>
-    </>
-  );
-};
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
+const Loading = () => (
+  <>
+    <div className="loader">
+      <Skeleton />
+    </div>
+    <div className="loader">
+      <Skeleton />
+    </div>
+    <div className="loader">
+      <Skeleton />
+    </div>
+    <div className="loader">
+      <Skeleton />
+    </div>
+  </>
+);
 
 export default Loading;
