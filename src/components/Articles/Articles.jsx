@@ -30,8 +30,10 @@ const Articles = () => {
 
   if (isLoading)
     return (
-      <div className="loading">
-        <Loading />
+      <div className="articlesLoading">
+        <div className="loading">
+          <Loading />
+        </div>
       </div>
     );
 
