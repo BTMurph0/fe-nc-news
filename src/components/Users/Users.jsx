@@ -2,18 +2,19 @@ import { useState, useEffect, useContext } from "react";
 import { LoginContext } from "../../contexts/LoginContext";
 import { getUsers } from "../../api";
 import UserCard from "../UserCard/UserCard";
-import Loading from "../Loading/Loading";
+
 import "./Users.css";
+import UserSkeleton from "../UserSkeleton/UserSkeleton";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  //const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const { login } = useContext(LoginContext);
 
   useEffect(() => {
     getUsers().then((usersFromApi) => {
       setUsers(usersFromApi);
-      //setIsLoading(false);
+      setIsLoading(false);
     });
   }, []);
 
@@ -28,9 +29,9 @@ const Users = () => {
         </p>
       </article>
       <div>
-        {users.length === 0 ? (
-          <article className="usersLoading">
-            <Loading />
+        {isLoading ? (
+          <article className="usersList">
+            <UserSkeleton />
           </article>
         ) : (
           <article className="usersList">

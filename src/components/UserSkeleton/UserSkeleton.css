@@ -1,0 +1,12 @@
+.user-skeleton {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 160px;
+  gap: 4px;
+  text-align: center;
+  align-items: center;
+  max-width: 500px;
+  min-width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+}
